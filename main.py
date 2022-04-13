@@ -1,5 +1,6 @@
 from bottle import route, run, template
 from addition import resultatsomme
+import sys
 
 
 @route("/add/<a>/<b>")
@@ -8,4 +9,4 @@ def addition(a="0", b="0"):
     return template("{{resultat}}", resultat=resultat)
 
 
-run(host="localhost", port=8080, reloader=True)
+run(host="0.0.0.0", port=sys.argv[1], reloader=True)
